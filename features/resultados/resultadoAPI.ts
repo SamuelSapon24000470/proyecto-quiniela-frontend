@@ -2,7 +2,7 @@ import { authFetch } from '../utils/authFetch';
 
 export const fetchCampeonGoleadorReal = async () => {
   try {
-    const response = await authFetch("http://localhost:5000/api/participantes/puntos-extras");
+    const response = await authFetch("https://proyecto-quiniela-backend.onrender.com/api/participantes/puntos-extras");
     if (!response.ok) throw new Error('Error en la respuesta');
     return await response.json();
   } catch (error) {
@@ -13,7 +13,7 @@ export const fetchCampeonGoleadorReal = async () => {
 
 export const saveCampeonGoleadorReal = async ( campeonReal: string, goleadorReal: string ) => {
   try {
-    const response = await authFetch("http://localhost:5000/api/participantes/puntos-extras", {
+    const response = await authFetch("https://proyecto-quiniela-backend.onrender.com/api/participantes/puntos-extras", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

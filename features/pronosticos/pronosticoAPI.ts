@@ -2,7 +2,7 @@ import { authFetch } from '../utils/authFetch';
 
 export const fetchPronosticos = async () => {
   try {
-    const response = await authFetch("http://localhost:5000/api/pronosticos");
+    const response = await authFetch("https://proyecto-quiniela-backend.onrender.com/api/pronosticos");
     if (!response.ok) throw new Error('Error en la respuesta');
     return await response.json();
   } catch (error) {
@@ -13,7 +13,7 @@ export const fetchPronosticos = async () => {
 
 export const createPronosticoPartido = async (participanteId: string, partidoId: string, pronostico: string) => {
   try {
-    const response = await authFetch("http://localhost:5000/api/pronosticos", {
+    const response = await authFetch("https://proyecto-quiniela-backend.onrender.com/api/pronosticos", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json' // Añadir header
@@ -39,7 +39,7 @@ export const createPronosticoPartido = async (participanteId: string, partidoId:
 
 export const createPronosticoCampeonGoleador = async (participanteId: string, campeonPredicho: string, goleadorPredicho: string) => {
   try {
-    const response = await authFetch(`http://localhost:5000/api/participantes/${participanteId}/predicciones-extras`, {
+    const response = await authFetch(`https://proyecto-quiniela-backend.onrender.com/api/participantes/${participanteId}/predicciones-extras`, {
       method: 'POST',
       body: JSON.stringify({ participanteId, campeonPredicho, goleadorPredicho })
     });
@@ -53,7 +53,7 @@ export const createPronosticoCampeonGoleador = async (participanteId: string, ca
 
 export const updatePronostico = async (id: string, pronostico: string) => {
   try {
-    const response = await authFetch(`http://localhost:5000/api/pronosticos/${id}`, {
+    const response = await authFetch(`https://proyecto-quiniela-backend.onrender.com/api/pronosticos/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({ pronostico })
     });

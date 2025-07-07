@@ -2,7 +2,7 @@ import { authFetch } from '../utils/authFetch';
 
 export const loginUser = async (credentials: { user: string; password: string }) => {
   try {
-    const response = await fetch("http://localhost:5000/api/auth/login", {
+    const response = await fetch("https://proyecto-quiniela-backend.onrender.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,7 +24,7 @@ export const loginUser = async (credentials: { user: string; password: string })
 // Función para verificar la sesión
 export const checkSession = async () => {
   try {
-    const response = await authFetch("http://localhost:5000/api/auth/check-session");
+    const response = await authFetch("https://proyecto-quiniela-backend.onrender.com/api/auth/check-session");
     if (!response.ok) throw new Error('Sesión inválida');
     return await response.json();
   } catch (error) {

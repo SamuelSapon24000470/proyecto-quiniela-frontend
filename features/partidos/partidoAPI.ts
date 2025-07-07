@@ -2,7 +2,7 @@ import { authFetch } from '../utils/authFetch';
 
 export const fetchPartidos = async () => {
   try {
-    const response = await authFetch("http://localhost:5000/api/partidos");
+    const response = await authFetch("https://proyecto-quiniela-backend.onrender.com/api/partidos");
     if (!response.ok) throw new Error('Error en la respuesta');
     return await response.json();
   } catch (error) {
@@ -14,7 +14,7 @@ export const fetchPartidos = async () => {
 // Crear partido
 export const createPartido = async (jornada: string, local: string, visitante: string) => {
   try {
-    const response = await authFetch("http://localhost:5000/api/partidos", {
+    const response = await authFetch("https://proyecto-quiniela-backend.onrender.com/api/partidos", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export const createPartido = async (jornada: string, local: string, visitante: s
 // Actualizar resultado (usando PATCH)
 export const updateResultadoPartido = async (id: string, resultado: string) => {
   try {
-    const response = await authFetch(`http://localhost:5000/api/partidos/${id}/resultado`, {
+    const response = await authFetch(`https://proyecto-quiniela-backend.onrender.com/api/partidos/${id}/resultado`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ export const updateResultadoPartido = async (id: string, resultado: string) => {
 
 export const deletePartido = async (id: string) => {
   try {
-    const response = await authFetch(`http://localhost:5000/api/partidos/${id}`, {
+    const response = await authFetch(`https://proyecto-quiniela-backend.onrender.com/api/partidos/${id}`, {
       method: 'DELETE'
     });
     if (!response.ok) throw new Error('Error al eliminar partido');

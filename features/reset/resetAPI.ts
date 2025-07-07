@@ -3,7 +3,7 @@ import { authFetch } from '../utils/authFetch';
 
 export const resetAllData = async () => {
   try {
-    const response = await authFetch("http://localhost:5000/api/reset", {
+    const response = await authFetch("https://proyecto-quiniela-backend.onrender.com/api/reset", {
       method: 'DELETE'
     });
     
