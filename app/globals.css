@@ -40,3 +40,37 @@ a {
     color-scheme: dark;
   }
 }
+
+/* Asegura que todos los elementos ocupen el 100% del alto */
+html, body, #__next {
+  height: 100%;
+}
+
+/* Estructura principal */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(45deg, #1b263b, #0d1b2a);
+  background-attachment: fixed;
+}
+
+/* Contenedor flexible */
+.flex-1 {
+  flex: 1 0 auto;
+}
+
+/* Espacio para el navbar fijo */
+.mt-16 {
+  margin-top: 4rem; /* Ajusta según la altura de tu navbar */
+}
+
+/* Estilos del footer */
+footer {
+  flex-shrink: 0;
+  background-color: rgba(27, 38, 59, 0.9);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  margin-top: 10px;
+}
