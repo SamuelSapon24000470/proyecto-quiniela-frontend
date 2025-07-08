@@ -97,7 +97,7 @@ export default function PronosticoPartido() {
               .filter(partido => partido.status === 'pendiente') // Solo partidos pendientes
               .map(partido => (
                 <option key={partido._id} value={partido._id}>
-                  {partido.local} vs {partido.visitante}
+                  {partido.local} vs {partido.visitante} - Jornada {partido.jornada}
                 </option>
               ))}
           </select>
