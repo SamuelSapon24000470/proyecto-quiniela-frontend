@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useAppDispatch, useAppSelector } from '@/Redux/store';
 import { logout } from '@/features/auth/authSlice';
 import styles from "./Navbar.module.css";
-import logo from "./Castors-Chamusca.jpg";
+import logo from "./WC-2026.png";
 import { useEffect, useState } from "react";
 
 export default function CustomNavbar() {
